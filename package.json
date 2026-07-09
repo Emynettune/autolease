@@ -10,9 +10,8 @@
     "test": "node --test",
     "seed": "node src/database/seeders/index.js",
     "migrate:create": "node-pg-migrate create",
-      "migrate:up": "node-pg-migrate up",
-      "migrate:down": "node-pg-migrate down"
-    
+    "migrate:up": "node-pg-migrate up",
+    "migrate:down": "node-pg-migrate down"
   },
   "keywords": [
     "car-rental",
@@ -48,15 +47,6 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.6",
-    "@types/cookie-parser": "^1.4.8",
-    "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "@types/jsonwebtoken": "^9.0.10",
-    "@types/multer": "^1.4.13",
-    "@types/node": "^22.10.2",
-    "@types/nodemailer": "^6.4.24",
-    "@types/ws": "^8.5.13",
     "nodemon": "^3.1.14"
   },
   "directories": {
