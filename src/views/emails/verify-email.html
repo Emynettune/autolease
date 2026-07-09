@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Your Email</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; padding: 24px; color: #162033; }
+      .wrapper { max-width: 620px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .header { background: linear-gradient(135deg, #2563eb, #0f766e); padding: 32px 24px; color: #fff; }
+      .content { padding: 32px 24px 24px; }
+      .button { display: inline-block; margin-top: 18px; padding: 12px 20px; background: #2563eb; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; }
+      .footer { padding: 20px 24px 32px; font-size: 12px; color: #64748b; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1>Verify Your Email</h1>
+      </div>
+      <div class="content">
+        <p>Hello {{firstName}},</p>
+        <p>Please verify your email address to activate your AutoLease account.</p>
+        <a class="button" href="{{verificationUrl}}">Verify Email</a>
+        <p>If the button does not work, copy and paste this link into your browser:</p>
+        <p>{{verificationUrl}}</p>
+      </div>
+      <div class="footer">
+        <p>Thanks,<br />The AutoLease Team</p>
+      </div>
+    </div>
+  </body>
+</html>

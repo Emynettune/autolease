@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to AutoLease</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; padding: 24px; color: #162033; }
+      .wrapper { max-width: 620px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .header { background: linear-gradient(135deg, #16a34a, #0f766e); padding: 32px 24px; color: #fff; }
+      .content { padding: 32px 24px 24px; }
+      .button { display: inline-block; margin-top: 18px; padding: 12px 20px; background: #16a34a; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; }
+      .footer { padding: 20px 24px 32px; font-size: 12px; color: #64748b; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1>Welcome to AutoLease, {{firstName}}!</h1>
+      </div>
+      <div class="content">
+        <p>Your account has been created successfully.</p>
+        <p>Start exploring our car rental marketplace and enjoy a smooth booking experience.</p>
+        <a class="button" href="{{loginUrl}}">Log In to Your Account</a>
+        <p>Before you get started, please verify your email address.</p>
+      </div>
+      <div class="footer">
+        <p>Thanks,<br />The AutoLease Team</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Wallet Is Ready</title>
+    <style>
+      body { font-family: Arial, sans-serif; background: #f4f7fb; margin: 0; padding: 24px; color: #162033; }
+      .wrapper { max-width: 620px; margin: 0 auto; background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); }
+      .header { background: linear-gradient(135deg, #ca8a04, #ea580c); padding: 32px 24px; color: #fff; }
+      .content { padding: 32px 24px 24px; }
+      .button { display: inline-block; margin-top: 18px; padding: 12px 20px; background: #ea580c; color: #fff; text-decoration: none; border-radius: 8px; font-weight: 600; }
+      .footer { padding: 20px 24px 32px; font-size: 12px; color: #64748b; }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <h1>Your Wallet Is Ready</h1>
+      </div>
+      <div class="content">
+        <p>Hello {{firstName}},</p>
+        <p>Your AutoLease wallet has been created successfully.</p>
+        <p>You can now receive payouts, track your balance, and manage transactions with ease.</p>
+        <a class="button" href="{{dashboardUrl}}">Open Wallet</a>
+      </div>
+      <div class="footer">
+        <p>Thanks,<br />The AutoLease Team</p>
+      </div>
+    </div>
+  </body>
+</html>
