@@ -2,16 +2,14 @@
   "name": "autolease-api",
   "version": "1.0.0",
   "description": "Car Rental & Marketplace API - Node.js, Express, JavaScript MVC",
-  "main": "src/server.js",
+  "main": "C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
   "scripts": {
-    "build": "node --check src/server.js",
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js",
+    "start": "node C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
+    "dev": "nodemon C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
     "test": "node --test",
-    "seed": "node src/database/seeders/index.js",
-    "migrate:create": "node-pg-migrate create",
-    "migrate:up": "node-pg-migrate up",
-    "migrate:down": "node-pg-migrate down"
+    "seed": "node C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\database\\seeders\\index.js",
+    "migration:generate": "node-pg-migrate create -m C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\migrations",
+    "migration:run": "node-pg-migrate up -m C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\migrations"
   },
   "keywords": [
     "car-rental",
@@ -40,6 +38,7 @@
     "nodemailer": "^9.0.3",
     "pg": "^8.22.0",
     "reflect-metadata": "^0.2.2",
+    "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.1",
     "typeorm": "^0.3.20",
     "uuid": "^11.0.3",

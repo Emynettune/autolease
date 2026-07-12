@@ -11,6 +11,8 @@ test('sanitizeRequest escapes html in request inputs', async () => {
         params: {},
     };
     await new Promise((resolve) => sanitizeRequest(req, {}, resolve));
+    console.log("sanitized output:", req.body.name);
+
     assert.equal(req.body.name, '&lt;script&gt;alert(1)&lt;/script&gt;');
 });
 
@@ -20,4 +22,6 @@ test('access tokens include a jwt id for blacklist support', () => {
     assert.equal(typeof payload.jti, 'string');
     assert.ok(payload.jti.length > 0);
 });
+
+
 

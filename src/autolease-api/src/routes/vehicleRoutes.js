@@ -1,0 +1,25 @@
+"use strict";
+
+const express = require("express");
+const zod = require("zod");
+const controllers = require("../controllers");
+const validate = require("../middlewares/validate");
+const auth = require("../middlewares/auth");
+const upload = require("../middlewares/upload");
+const schemas = require("../validators/schemas");
+const enums = require("../types/enums");
+const router = (0, express.Router)();
+router.get('/', (0, validate.validateQuery)(schemas.vehicleFilterSchema), controllers.vehicle.browse);
+router.use(auth.authenticate);
+router.get('/owner/mine', (0, auth.authorize)(enums.UserRole.CAR_OWNER), (0, validate.validateQuery)(schemas.paginationSchema), controllers.vehicle.getMine);
+router.get('/owner/bookings', (0, auth.authorize)(enums.UserRole.CAR_OWNER), (0, validate.validateQuery)(schemas.paginationSchema), controllers.vehicle.getBookings);
+router.get('/owner/earnings', (0, auth.authorize)(enums.UserRole.CAR_OWNER), controllers.vehicle.getEarnings);
+router.post('/', (0, auth.authorize)(enums.UserRole.CAR_OWNER), (0, validate.validateBody)(schemas.createVehicleSchema), controllers.vehicle.create);
+router.post('/:id/images', (0, auth.authorize)(enums.UserRole.CAR_OWNER), upload.upload.array('images', 10), controllers.vehicle.uploadImages);
+router.patch('/:id', (0, auth.authorize)(enums.UserRole.CAR_OWNER), (0, validate.validateBody)(schemas.updateVehicleSchema), controllers.vehicle.update);
+router.delete('/:id', (0, auth.authorize)(enums.UserRole.CAR_OWNER), controllers.vehicle.delete);
+router.patch('/:id/availability', (0, auth.authorize)(enums.UserRole.CAR_OWNER), (0, validate.validateBody)(zod.z.object({ isAvailable: zod.z.boolean() })), controllers.vehicle.setAvailability);
+router.post('/:id/pause', (0, auth.authorize)(enums.UserRole.CAR_OWNER), controllers.vehicle.pause);
+router.post('/:id/resume', (0, auth.authorize)(enums.UserRole.CAR_OWNER), controllers.vehicle.resume);
+router.get('/:id', controllers.vehicle.getById);
+module.exports = router;

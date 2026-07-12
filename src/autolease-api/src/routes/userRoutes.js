@@ -1,0 +1,20 @@
+"use strict";
+
+const express = require("express");
+const controllers = require("../controllers");
+const validate = require("../middlewares/validate");
+const auth = require("../middlewares/auth");
+const upload = require("../middlewares/upload");
+const schemas = require("../validators/schemas");
+const router = (0, express.Router)();
+router.use(auth.authenticate);
+router.get('/profile', controllers.user.getProfile);
+router.patch('/profile', (0, validate.validateBody)(schemas.updateProfileSchema), controllers.user.updateProfile);
+router.post('/profile/picture', upload.upload.single('picture'), controllers.user.uploadPicture);
+router.get('/wallet', controllers.user.getWallet);
+router.get('/wallet/transactions', (0, validate.validateQuery)(schemas.paginationSchema), controllers.user.getWalletTx);
+router.get('/rentals', (0, validate.validateQuery)(schemas.paginationSchema), controllers.user.getRentals);
+router.get('/payments', (0, validate.validateQuery)(schemas.paginationSchema), controllers.user.getPayments);
+router.get('/sessions', controllers.user.getSessions);
+router.delete('/sessions/:id', controllers.user.revokeSession);
+module.exports = router;

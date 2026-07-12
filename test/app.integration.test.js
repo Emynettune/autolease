@@ -2,16 +2,18 @@
 const assert = require("node:assert/strict");
 const http = require("node:http");
 const test = require("node:test");
-const appModule = require("../src/app");
-const app = appModule.default || appModule;
+const app = require("../src/app");
+const app = require("../src/app");
 
-function request(server, path) {
+function request(server, path, method = 'GET') {
     return new Promise((resolve, reject) => {
         const address = server.address();
-        const req = http.request({ hostname: '127.0.0.1', port: address.port, path, method: 'GET' }, (res) => {
+        const req = http.request({ hostname: '127.0.0.1', port: address.port, path, method }, (res) => {
+          (res) => {
             let body = '';
-            res.on('data', (chunk) => body += chunk);
+            res.on('data', (chunk) => {body += chunk; });
             res.on('end', () => resolve({ statusCode: res.statusCode, body }));
+          }
         });
         req.on('error', reject);
         req.end();
@@ -30,4 +32,3 @@ test('GET /health returns ok', async () => {
         await new Promise((resolve) => server.close(resolve));
     }
 });
-
