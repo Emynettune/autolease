@@ -2,14 +2,14 @@
   "name": "autolease-api",
   "version": "1.0.0",
   "description": "Car Rental & Marketplace API - Node.js, Express, JavaScript MVC",
-  "main": "C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
+  "main": "src\\server.js",
   "scripts": {
-    "start": "node C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
+    "start": "node src\\server.js",
     "dev": "nodemon C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\server.js",
     "test": "node --test",
-    "seed": "node C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\database\\seeders\\index.js",
-    "migration:generate": "node-pg-migrate create -m C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\migrations",
-    "migration:run": "node-pg-migrate up -m C:\\Users\\EMEKA\\Autolease\\src\\autolease-api\\src\\migrations"
+    "seed": "node src\\database\\seeders\\index.js",
+    "migration:generate": "node-pg-migrate create -m src\\migrations",
+    "migration:run": "node-pg-migrate up -m src\\migrations"
   },
   "keywords": [
     "car-rental",
